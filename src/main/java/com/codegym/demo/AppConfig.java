@@ -1,5 +1,7 @@
 package com.codegym.demo;
 
+import com.codegym.demo.service.CustomerService;
+import com.codegym.demo.service.CustomerServiceImp;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -49,4 +51,9 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         return viewResolver;
     }
     //endregion
+
+    @Bean
+    public CustomerService customerService(){
+        return new CustomerServiceImp();
+    }
 }
